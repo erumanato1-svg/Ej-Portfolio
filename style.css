@@ -459,19 +459,22 @@ section{
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    animation: revealUp 0.8s ease forwards;
+    animation-play-state: paused;
 }
 
 .reveal.show {
-    opacity: 1;
-    transform: translateY(0);
+    animation-play-state: running;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .reveal {
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        translate: 0 40px;
+    }
+
+    to {
         opacity: 1;
-        transform: none;
-        transition: none;
+        translate: 0 0;
     }
 }
