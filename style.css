@@ -449,7 +449,7 @@ section{
 
     .about img img{
         width: 70vw;
-        height: 30rem;
+        height: auto;
     }
 
     .contact form{
